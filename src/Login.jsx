@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
-    // Aquí puedes agregar la lógica para manejar el inicio de sesión
-    navigate('/taskList');
-    }
+    
+    navigate("/taskList");
+  };
 
   return (
     <div>
-      <h1>Iniciar sesión</h1>
+      <h1>Gestor de tareas</h1>
+      <h2>Para comenzar a gestionar sus tareas inicie sesión</h2>
       <form onSubmit={handleLogin}>
         <label htmlFor="username">Nombre de usuario:</label>
         <input
@@ -33,8 +34,10 @@ const LoginPage = () => {
         />
         <br />
         <button type="submit">Ingresar</button>
+        <p>
+          <a href="/register">Registrate</a>
+        </p>
       </form>
-      <p><a href="/register">Registrate</a></p>
     </div>
   );
 };
