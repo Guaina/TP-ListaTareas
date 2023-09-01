@@ -8,7 +8,7 @@ const LoginPage = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    
+
     navigate("/taskList");
   };
 
